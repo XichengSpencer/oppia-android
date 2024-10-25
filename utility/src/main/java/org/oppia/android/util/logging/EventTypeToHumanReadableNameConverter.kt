@@ -4,8 +4,7 @@ import org.oppia.android.app.model.EventLog.Context.ActivityContextCase
 import javax.inject.Inject
 
 /**
- * Implementation of [EventTypeToHumanReadableNameConverter] which provides well-named
- * representations for each event type.
+ * Converter for event types into loggable, human-readable names.
  *
  * The provided names may be changed over time as the broad standard for event names evolves with
  * new and changed events. The general convention for event names is a second person singular
@@ -21,9 +20,8 @@ import javax.inject.Inject
  * event's integral type rather than its name (as this type will remain fixed for the lifetime of a
  * given event, unlike its name returned by this implementation).
  */
-class EventTypeToHumanReadableNameConverter @Inject constructor()
-   {
-   fun convertToHumanReadableName(eventType: ActivityContextCase): String {
+class EventTypeToHumanReadableNameConverter @Inject constructor() {
+  fun convertToHumanReadableName(eventType: ActivityContextCase): String {
     return when (eventType) {
       ActivityContextCase.OPEN_EXPLORATION_ACTIVITY -> "open_exploration_player_screen"
       ActivityContextCase.OPEN_INFO_TAB -> "select_topic_info_tab"
