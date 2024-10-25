@@ -21,6 +21,12 @@ import javax.inject.Inject
  * given event, unlike its name returned by this implementation).
  */
 class EventTypeToHumanReadableNameConverter @Inject constructor() {
+  /**
+   * Converts an event type to a human-readable name.
+   *
+   * @param eventType The type of event to convert.
+   * @return A human-readable string representation of the event type.
+   */
   fun convertToHumanReadableName(eventType: ActivityContextCase): String {
     return when (eventType) {
       ActivityContextCase.OPEN_EXPLORATION_ACTIVITY -> "open_exploration_player_screen"
