@@ -166,12 +166,12 @@ class TextInputLayoutBindingAdaptersTest {
 
   private fun launchActivity():
     ActivityScenario<TextInputLayoutBindingAdaptersTestActivity>? {
-    val scenario = ActivityScenario.launch<TextInputLayoutBindingAdaptersTestActivity>(
-      TextInputLayoutBindingAdaptersTestActivity.createIntent(context)
-    )
-    testCoroutineDispatchers.runCurrent()
-    return scenario
-  }
+      val scenario = ActivityScenario.launch<TextInputLayoutBindingAdaptersTestActivity>(
+        TextInputLayoutBindingAdaptersTestActivity.createIntent(context)
+      )
+      testCoroutineDispatchers.runCurrent()
+      return scenario
+    }
 
   private fun setUpTestApplicationComponent() {
     ApplicationProvider.getApplicationContext<TestApplication>().inject(this)
